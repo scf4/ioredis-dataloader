@@ -1,3 +1,5 @@
+// Do not use
+
 const DataLoader = require('dataloader');
 
 module.exports = ({ redis }) => {
