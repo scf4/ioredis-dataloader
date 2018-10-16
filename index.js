@@ -6,7 +6,7 @@ module.exports = ({ redis }) => {
   const mgetLoader = new DataLoader(keys => redis.mget(keys));
   return class RedisDataLoader {
     constructor(keyPrefix, defaultLoader, opts = {}) {
-      this.opts = { exprire: opts.expire };
+      this.opts = { expire: opts.expire };
       // prefixKey function
       this.prefixKey = (key) => `${keyPrefix}:${key}`;
       this.keyPrefix = keyPrefix;
